@@ -1,0 +1,172 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Root Variables */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #f4f4f4;
+    --border-color: #ddd;
+    --text-color: #333;
+    --hover-color: #0056b3;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header Styling */
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Search Input Field */
+input {
+    width: 350px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+input:focus {
+    width: 380px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInTable 1s forwards;
+}
+
+/* Table Header */
+th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Row Hover Effect */
+tbody tr:hover {
+    background: var(--hover-color);
+    color: white;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Image Styling */
+.student-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s ease-in-out, border-color 0.3s;
+}
+
+.student-img:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+/* No Result Message */
+#noResult {
+    display: none;
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTable {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    input {
+        width: 90%;
+    }
+    
+    input:focus {
+        width: 95%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .student-img {
+        width: 40px;
+        height: 40px;
+    }
+}
